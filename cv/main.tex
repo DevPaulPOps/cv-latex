@@ -1,0 +1,47 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\geometry{
+    a4paper,
+    margin=1.5cm
+}
+
+\definecolor{mainblue}{RGB}{0, 92, 171}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\large\bfseries\color{mainblue}}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{5pt}
+
+\setlist[itemize]{leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=mainblue
+}
+
+\begin{document}
+
+    \begin{center}
+    {\LARGE\bfseries\color{mainblue} Paul Perigault} \\[5pt]
+    \includegraphics[width=3cm]{assets/Photo} \\[10pt]
+
+    \small{Cloud DevSecOps Engineer Student} \\[5pt]
+    \faEnvelope\ \href{mailto:perigault.paul@gmail.com}{perigault.paul@gmail.com} \\
+    \faGithub\ \href{https://github.com/DevPaulPOps}{DevPaulPOps} \\
+    \faLinkedin\ \href{https://linkedin.com/in/paul-perigault}{paul-perigault} \\
+    \faGlobe\ \href{https://devpaulpops.github.io/}{devpaulpops.github.io} \\[15pt]
+    \end{center}
+
+    \input{sections/education}
+    \input{sections/experience}
+    \input{sections/skills}
+    \input{sections/languages}
+
+\end{document}
