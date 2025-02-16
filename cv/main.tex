@@ -1,47 +1,62 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage{geometry}
+\documentclass[a4paper]{article}
+
+% Configuration de la page
+\usepackage[top=1cm, bottom=1cm, left=1.4cm, right=1.4cm]{geometry}
 \usepackage{fontawesome5}
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{hyperref}
-
-\geometry{
-    a4paper,
-    margin=1.5cm
-}
-
-\definecolor{mainblue}{RGB}{0, 92, 171}
-
 \usepackage{titlesec}
-\titleformat{\section}
-{\large\bfseries\color{mainblue}}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{5pt}{5pt}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage[sfdefault]{roboto}
 
-\setlist[itemize]{leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt}
+% Couleurs personnalisées
+\definecolor{mainblue}{RGB}{30, 144, 255}
+\definecolor{darkgray}{RGB}{50, 50, 50}
 
+% Configuration des hyperliens
 \hypersetup{
     colorlinks=true,
-    urlcolor=mainblue
+    linkcolor=darkgray,
+    filecolor=mainblue,
+    urlcolor=mainblue,
 }
 
+% Style des sections
+\titleformat{\section}
+{\color{mainblue}\LARGE\bfseries}
+{}{0em}
+{}[\vspace{-0.1cm}]
+\titlespacing{\section}{0pt}{0.6cm}{0.3cm}
+
+% Configuration des listes
+\setlist{nosep}
+\setlist[itemize]{leftmargin=*,label={\small\textcolor{mainblue}{▸}},itemsep=2pt}
+
+% Commandes personnalisées pour les icônes
+\newcommand{\icon}[1]{\textcolor{mainblue}{#1}\hspace{0.3em}}
+
+% Suppression des marges de paragraphe
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+
+% Configuration des colonnes
+\setlength{\columnsep}{1cm}
+
 \begin{document}
-
-    \begin{center}
-    {\LARGE\bfseries\color{mainblue} Paul Perigault} \\[5pt]
-    \includegraphics[width=3cm]{assets/Photo} \\[10pt]
-
-    \small{Cloud DevSecOps Engineer Student} \\[5pt]
-    \faEnvelope\ \href{mailto:perigault.paul@gmail.com}{perigault.paul@gmail.com} \\
-    \faGithub\ \href{https://github.com/DevPaulPOps}{DevPaulPOps} \\
-    \faLinkedin\ \href{https://linkedin.com/in/paul-perigault}{paul-perigault} \\
-    \faGlobe\ \href{https://devpaulpops.github.io/}{devpaulpops.github.io} \\[15pt]
-    \end{center}
-
-    \input{sections/education}
+    \pagestyle{empty}
+    \input{sections/header}
+    \vspace{0.2cm}
     \input{sections/experience}
+    \vspace{0.2cm}
+    \input{sections/education}
+    \vspace{0.2cm}
     \input{sections/skills}
+    \vspace{0.2cm}
+    \input{sections/certifications}
+    \vspace{0.2cm}
     \input{sections/languages}
-
 \end{document}
